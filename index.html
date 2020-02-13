@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>你是我的世界</title>
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			html,body{height:100%;}
+			body{background:url("images/16.jpg");background-size:100% 100%;overflow:hidden;}
+			 .photo{width:1000px;height:600px;position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;perspective:700px;animation:scale 3s linear infinite;}
+			 .photo ul li{height:103px;list-style:none;}
+			 .photo ul li a{width:98px;height:98px;display:block;float:left;margin-left:6px;background:url("images/mienv.jpg") no-repeat;border-radius:7px;-webkit-transition:-webkit-transform 1s;transform-style:preserve-3d;}
+			 .photo ul li a:hover{transform:rotateY(360deg);}
+			 /*第一行*/
+			 .photo ul  .one_right{margin-left:110px}
+			 .photo ul  .one_left{margin-left:241px;}
+			 /*第二行*/
+			 .photo ul .two_one{margin-left:134px;}
+			 /*第三行*/
+			 .photo ul .three_one{margin-left:134px;}
+			 /*第四行*/
+			 .photo ul .four_one{margin-left:240px;}
+			 /*第五行*/
+			 .photo ul .five_one{margin-left:346px;}
+			 /*第六行*/
+			 .photo ul .six_one{margin-left:452px;}
+
+			 @keyframes scale{
+				from{transform:scale(1);}
+				50%{transform:scale(1.2);}
+				to{{transform:scale(1);}}
+			 }
+		</style>
+	</head>
+	<body>
+		
+		<div class="photo">
+		<ul>
+			<li><!--第一行-->
+				<a href="javascript:;" class="one_left"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;" style="display:none"></a>
+				<a href="javascript:;" class="one_right"></a>
+				<a href="javascript:;"></a>
+			</li>
+			
+			<li><!--第二行-->
+				<a href="javascript:;" class="two_one" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>
+			</li>
+
+			<li><!--第三行-->
+				<a href="javascript:;" class="three_one" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>	
+			</li>
+			<li><!--第四行-->
+				<a href="javascript:;" class="four_one" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>
+			</li>
+			<li><!--第五行-->
+				<a href="javascript:;" class="five_one" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>
+				<a href="javascript:;" style="background:url(images/mienv.jpg)"></a>
+			</li>
+			<li><!--第六行-->
+				<a href="javascript:;" class="six_one" style="background:url(images/mienv.jpg)"></a>
+			</li>
+		</ul>
+    </div>
+	
+	<script src="js/jquery.js"></script>
+	<script>
+		
+		$(".photo ul li").click(function(){
+			window.open("love.html");
+		});
+	</script>
+	
+	</body>
+</html>

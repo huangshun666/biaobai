@@ -1,0 +1,160 @@
+<!doctype html>
+<html onselectstart = "return false">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="Keywords" content="关键词,关键字">
+		<meta name="Description" content="">
+		<title>JAVA结合H5和CSS开发表白神器 - 蓝桥</title>
+		<link rel="shortcut icon" href=" /favicon.ico" /> 
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			html,body{height:100%;}
+			body{overflow: hidden;background:url("images/2.jpg")no-repeat fixed top center;background-size:100% 100%;}
+
+			.top{width:330px;height:47px;margin:0 auto 0;margin-top:50px;font-family:"华文行楷";font-size:40px;color:#FFF;text-shadow:2px 2px 5px #666;}
+
+			/*box start*/
+			.box{width:310px;height:310px;margin:200px auto 0;perspective:800px;}
+			.box .pic{width:240px;height:240px;position:relative;/*相对定位 */transform-style:preserve-3d;/*搭建3D*/
+				-webkit-animation:slide 16s linear infinite;
+			}
+			.box .pic ul li{list-style:none;position:absolute;top:0;left:0;cursor:pointer;}
+			@-webkit-keyframes slide{
+				from{transform:rotateY(0deg);}
+				to{transform:rotateY(360deg);}
+			}
+			.box .pic:hover{-webkit-animation-play-state:paused;}
+			.box .pic ul li:hover img{transform:scale(1.2);transition:.5s;}
+			/*box end*/
+			.xin{position:absolute;-webkit-animation:xin 16s linear infinite;}
+			
+			@-webkit-keyframes xin{
+				0%{top:0%;left:50%;opacity:1;}
+				20%{top:20%;left:80%;opacity:0;}
+				40%{top:50%;left:63%;opacity:1;}
+				60%{top:80%;left:43%;opacity:0;}
+				80%{top:50%;left:22%;opacity:1;}
+				100%{top:10%;left:2%;opacity:0;}
+			}
+			.xin1{position:absolute;-webkit-animation:xin1 16s linear infinite;}
+			@-webkit-keyframes xin1{
+				0%{top:10%;right:2%;opacity:1;}
+				20%{top:50%;right:80%;opacity:0;}
+				40%{top:43%;right:63%;opacity:1;}
+				60%{top:60%;right:43%;opacity:0;}
+				80%{top:10%;right:22%;opacity:1;}
+				100%{top:2%;right:2%;opacity:0;}
+			}
+
+			.text{width:700px;height:300px;margin:0 auto;}
+			.text p{font-size:22px;font-family:"楷体";line-height:30px;text-indent:30px;font-weight:800;animation:color 10s linear infinite;}
+			
+			@keyframes color{
+				0%{color:#1fbfd1;}
+				20%{color:#ffff00;}
+				40%{color:#a029b6;}
+				60%{color:#1c87c8;}
+				80%{color:#af8938;}
+				100%{color:#13bd8e;}
+			}
+		</style>
+	</head>
+
+<body id="bg">
+	<!--S head-->
+    <div class="top">
+        <marquee width=350px height=150px behavior=alternate>
+		   潭州爱情学院
+	    </marquee>
+     </div>
+    <!--end head-->
+
+	<!--box start-->
+	<div class="box">
+		<div class="pic">
+			<ul>
+				<li><img src="images/1.png"/></li>
+				<li><img src="images/2.png"/></li>
+				<li><img src="images/3.png"/></li>
+				<li><img src="images/4.png"/></li>
+				<li><img src="images/5.png"/></li>
+				<li><img src="images/6.png"/></li>	
+			</ul>
+		</div>
+	</div>
+	<!--box end-->
+	
+	<!--心-->
+	<div class="xin">
+		<img src="images/xin.png" />
+	</div>
+	<div class="xin1">
+		<img src="images/xin1.png" />
+	</div>
+
+	<!--文字-->
+	<div class="text">
+		<p id="test"></p>
+	</div>
+	
+	<embed src="music/1.mp3" hidden="true" loop="5" autostart=true />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.snow.min.js"></script>
+	<script type="text/javascript">
+		
+		$("img").attr("ondragstart","return false");
+	
+		$(function(){
+			$(".pic ul li").each(function(i){
+				var Deg = 360/$(".pic ul li").size();
+				$(this).css({
+					"transform":"rotateY("+Deg*i+"deg) translateZ(216px)"
+				});
+			});
+			
+			
+			$.fn.snow({
+					minSize:10,
+					maxSize:15,
+					newOn:500,
+					flakeColor:"#ffffff"
+			});
+
+			$.fn.snow({
+					minSize:10,
+					maxSize:15,
+					newOn:500,
+					flakeColor:"#c4e9f4"
+			});
+		
+		});
+		
+		var i = 0;
+		var str ="能够遇见你，对我来说是最大的幸福。有了你，我的生活变的绚丽多彩，有了你，世界变得如此迷人。你是我的世界，我的世界是你。";
+		window.onload = function typing(){
+			var mydiv = document.getElementById("test");
+			mydiv.innerHTML += str.charAt(i);
+			i++;
+			var id = setTimeout(typing,100);
+			if(i==str.length){
+				clearTimeout(id);
+				mydiv.value ="";
+				mydiv.innerHTML +=""
+				//alert("程序执行完毕！");
+			}
+		}
+		
+		var byTimer = null;
+		function autoby(){
+			var index=1;
+			byTimer = setInterval(function(){
+				$("html").css("height","100%");
+				$("#bg").css({"height":"100%","background":"url(images/"+index+".jpg)no-repeat","background-size":"100% 100%"});
+				index++;
+				if(index>4)index=1;
+			},3000);
+		}
+		autoby();
+	</script>
+</body>
+</html>
